@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Para o Meu Amor 💜</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top left, #e9d5ff, #c084fc, #7e22ce);
+      background-attachment: fixed;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      animation: brilho 10s infinite alternate;
+      text-align: center;
+    }
+
+    @keyframes brilho {
+      0% { filter: brightness(1); }
+      100% { filter: brightness(1.2); }
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      margin-top: 30px;
+      margin-bottom: 25px;
+      text-shadow: 0 0 12px #a855f7;
+    }
+
+    .botao {
+      padding: 14px 35px;
+      font-size: 18px;
+      background-color: white;
+      color: #7c3aed;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .botao:hover {
+      background-color: #a78bfa;
+      color: white;
+    }
+
+    .conteudo {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 35px;
+      animation: aparecer 1s ease forwards;
+      width: 100%;
+      max-width: 650px;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .foto {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+    }
+
+    .texto {
+      background-color: rgba(255, 255, 255, 0.12);
+      padding: 30px 25px;
+      border-radius: 20px;
+      font-size: 20px;
+      line-height: 2;
+      backdrop-filter: blur(8px);
+      white-space: pre-wrap;
+      text-align: left;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .coração {
+      font-size: 50px;
+      margin-top: 30px;
+      animation: pulsar 1.5s infinite;
+    }
+
+    @keyframes pulsar {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Uma lembrança com amor 💜</h1>
+  <button class="botao" onclick="mostrar()">Amor</button>
+
+  <div class="conteudo" id="conteudo">
+    <img src="foto.jpg" alt="Foto do Amor" class="foto">
+    <div class="texto">
+Meu amor,
+
+Hoje eu queria te dar algo simples, mas feito com carinho de verdade.
+Essa é só uma pequena lembrança, mas nela coloquei um pedacinho do meu coração.
+
+Desde que você entrou na minha vida, tudo mudou...
+As cores ficaram mais vivas, os dias mais leves, e até os silêncios mais doces.
+
+Você é meu abrigo, minha paz, meu sorriso fácil.
+É com você que tudo faz sentido, mesmo quando nada mais parece certo.
+
+Você me inspira a ser melhor todos os dias.
+Seu carinho me fortalece, seu olhar me acalma.
+
+Cada momento ao seu lado é precioso.
+E mesmo que eu não diga sempre, eu te amo com todo o meu ser.
+
+Obrigado por existir.
+Obrigado por ser o meu Amor.
+
+💜 Com todo o meu amor... para sempre.
+    </div>
+    <div class="coração">💜</div>
+  </div>
+
+  <audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function mostrar() {
+      document.getElementById('conteudo').style.display = 'flex';
+      const audio = document.getElementById('musica');
+      if (audio) {
+        audio.play().catch(() => {});
+      }
+    }
+  </script>
+
+</body>
+</html>
